@@ -1,10 +1,17 @@
-/* Below are styles that are optional to use. You can choose to incorporate your own CSS styles. */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
 header, footer {
@@ -14,40 +21,123 @@ header, footer {
     padding: 1rem;
 }
 
+
 main {
     padding: 2rem;
 }
 
+
 #search-form {
+    display: flex;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
-
-#filter-sort {
-    justify-content: space-between;
-    margin-bottom: 1rem;
+#search-input {
+    width: 300px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
+
+#search-type {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#sort-rating {
+    margin-top: 5px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+#ebook-filter {
+    margin-top: 1rem;
+}
+
 
 #book-list {
     list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
 }
 
+/* Book item styling */
 .book-item {
+    background-color: #fff;
     border: 1px solid #ddd;
     padding: 1rem;
     border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.book-item img {
+.book-item:hover {
+    transform: scale(1.05);
+}
+
+.cover-element img {
     max-width: 100%;
     height: auto;
+    border-radius: 5px;
+}
+
+.title-element {
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.author-element {
+    color: #777;
+    font-style: italic;
+}
+
+.rating-element,
+.ebook-element {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
 }
 
 #selected-book {
+    display: none;
+    background-color: #fff;
+    padding: 2rem;
     border: 1px solid #ddd;
-    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+#selected-book img {
+    max-width: 100%;
+    height: auto;
     border-radius: 5px;
     margin-top: 1rem;
 }
 
+#selected-book h2 {
+    margin-bottom: 1rem;
+}
+
+#selected-book p {
+    margin-bottom: 0.5rem;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+}

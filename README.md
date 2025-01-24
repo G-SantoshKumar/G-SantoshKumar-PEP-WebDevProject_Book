@@ -222,7 +222,7 @@ A basic query is as follows:
 
 `https://www.googleapis.com/books/v1/volumes?q=searchterm`
 
-
+ 
 
 Where `q` is a query parameter that represents the key “query” and the associated value is the search term you want to use. 
 

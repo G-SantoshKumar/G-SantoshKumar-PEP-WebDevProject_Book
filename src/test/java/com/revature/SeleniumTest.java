@@ -278,6 +278,21 @@ public class SeleniumTest {
         }
     }
 
+// Helper method to extract rating from the book element
+private float extractRating(WebElement book) {
+    try {
+        String ratingText = book.findElement(By.className("rating-element")).getText().split(": ")[1];
+        if ("Unknown".equals(ratingText)) {
+            return 0.0f;
+        } else {
+            return Float.parseFloat(ratingText);
+        }
+    } catch (NoSuchElementException e) {
+        return 0.0f; // Default value if rating is not found
+    }
+}
+
+
     // 6: Our application’s search results should be filterable by whether or not
     // the results are available as ebooks.
     @Test
